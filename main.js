@@ -5,34 +5,35 @@ var story = {
     bonusText: "",
 
     prologue: {
-        story:`Travis Gallon is cooler than you. Boys think he\'s weird, sure, but girls like him. So when Travis Gallon came over to you at lunch 
-        today and asked if you wanted to come over after school, you said yes. Now you're waiting by the curb and wondering if it was only a joke.`,
-        destination:"school"
+        story:`Travis Gallon is cooler than you. Boys think he\'s weird, sure, but girls like him. So when Travis Gallon came to your table at lunch 
+        and asked if you wanted to come over after school, you said yes. <br><br>Now you're waiting by the curb and wondering if it was only a joke.`,
+        destination:"school",
     },
     school: {
-        story:`\"Hey, you.\" <br>His voice comes from behind and his hand touches your shoulder in greeting as he passes by. It seems like he expects you to follow, so you do.<br>
+        story:`\"Hey, you.\"<br><br>His voice comes from behind and his hand touches your shoulder in greeting as he passes by. It seems like he expects you to follow, so you do.<br>
         \"Hi.\"<br>\"My bike\'s over here.\" <br>He mounts the bike and rings the bell twice.      <i>Brring Brring</i>
         <br>"Get up on the handlebars.\"<br><br>
         You come to a stop in front of a small one-story house. You hop off and he dismounts, letting the bike fall to the ground.
         He walks to the front door without looking at you. It isn\'t locked but it\'s sticky, and he shoves into it with his shoulder to get it open.`,
         buttonTitle:"Follow",
-        destination:"hisHouse" 
+        destination:"hisHouse", 
     },
     hisHouse: {
         story: `
-        
-The inside is full of crap. Boxes stacked waist high form the perimeter of the room, receipts, papers, and piles of mail cover every surface. Miscellaneous items help take up the space: a cheap plastic wall clock, a canvas bag full of wires, an unspooled hose covered in dust.
-<br>The image of it all on fire comes and goes through your mind.<br><br> He leads you to the kitchen and fills up a cloudy glass from the tap, downing it in seconds. He does it again, and then looks at you, calmer now than before.<br>
-\"You want some water or something?\"<br>
-\"No thanks.\"<br>
-Your palms are sweating as you work up the courage to speak. You\'ve been wanting to ask the question since lunch today. 
-\"Why\'d you invite me over?\"<br>
-\"Because I like you. And I wanted to show you something.\"<br>
-\"Oh.\" You almost ask why again, but stop yourself. \"What?\"<br>
-\"It\'s in my room.\"
+                
+        The inside is full of crap. Boxes stacked waist high form the perimeter of the room, receipts, papers, and piles of mail cover every surface. Miscellaneous items help take up the space: a cheap plastic wall clock, a canvas bag full of wires, an unspooled hose covered in dust.
+        <br>The image of it all on fire comes and goes through your mind.<br><br> He leads you to the kitchen and fills up a cloudy glass from the tap, downing it in seconds. He does it again, and then looks at you, calmer now than before.<br>
+        \"You want some water or something?\"<br>
+        \"No thanks.\"<br>
+        Your palms are sweating as you work up the courage to speak. You\'ve been practicing the question in your head since lunch today. 
+        <br>\"Why\'d you invite me over?\"<br>
+        \"Because I like you. And I wanted to show you something.\"<br>
+        \"Oh.\" You almost ask why again, but stop yourself. \"What?\"<br>
+        \"It\'s in my room.\"
         `,
         buttonTitle:"Go to Room",
-        destination:"room1"
+        destination:"room1",
+        newSound: "waltz.mp3"
     },
     room1: {
         story:`
@@ -55,14 +56,15 @@ Your palms are sweating as you work up the courage to speak. You\'ve been wantin
             },
             {
             choice:"Play it cool",
-            newText:"\"I don\'t care.\"<br><br> He leans down and peers into your face. Just when you start to wonder what he\'s going to do, he speaks.\"I don\'t believe you.\"",
+            newText:"\"I don\'t care.\"<br><br> He leans down and peers into your face. Just when you start to wonder what he\'s going to do, he speaks. \"I don\'t believe you.\"",
             destination:"room2"
             },
             {
             choice:"Say nothing",
             newText:"",
             destination:"room2"
-            } ]    
+            } ],
+
     },
     room2: {
         story:`\"Anyways,\" he moves over to his desk and starts rummaging through the mess, throwing papers and trash on the floor until he finds something. 
@@ -74,7 +76,7 @@ Your palms are sweating as you work up the courage to speak. You\'ve been wantin
         choices: [
             {
             choice:"Lie",
-            newText:"\"No, not really. It\'s okay.\"",
+            newText:"\"No, I haven't really. It\'s okay.\"",
             destination:"room3"
             },
             {
@@ -109,25 +111,33 @@ Your palms are sweating as you work up the courage to speak. You\'ve been wantin
             newText:`You stay frozen in place. The cheap cot sinks below your combined weight with a squeal, pooling your bodies together. You can feel the warmth of his
              leg and the coarseness of the hair on it, now flush against your own. <br>Though your eyes are looking at the screen your focus is on his face in the periphery;
              you can tell he\'s staring. Your gaze drops to the floor, and then to your hands\- clasped at your lap. Your heart is pounding.<br>
-            <br>\"You should look at me\" He says in a cadence that is strange on him, pithy, and gently guides your head by the chin.<br><br> You glance into his eyes and look away quickly,
+            <br>\"You should look at me,\" he says in a cadence that is strange on him, pithy, and gently guides your head by the chin.<br><br> You glance into his eyes and look away quickly,
              to the corner of the room, now the window frame, landing on the soft line drawn by the meeting of the wall against the ceiling.<br><br> 
             \"Don\'t look away, keep looking.\"`,
             destination:"eyeContact"
             } ],
         },
     moveOver: {
-            story: "",
-            destination: "outside",
+        story: "",
+        destination: "dejected"
         },
+    dejected: {
+        story: `He lets his torso drop like dead weight onto the bed and stares up at the ceiling.<br><br> \"I\'m not gonna hurt you.<br>
+        \"I just thought you might want to see.\"<br><br>
+        You hear the crunching sound of tires on the gravel outside. Travis jolts out of bed and starts fiddling with the TV, stuffing the tape into some recess in the bookshelf.<br>\"My dads home, we gotta go.\"<br>`,
+        newText2: "He grabs your arm and shepherds you away from the house hurriedly. Once you can no longer see it behind you he lets go.",
+        destination: "outside",
+        buttonTitle: "Go through window",
+    },
     kitchen: {
             story:"",
             destination: "kitchen2",
             buttonTitle: "Okay"
         },
         kitchen2: {
-            story:`Leaning against the counter, you watch him smear peanut butter onto two slices of white bread. His movements are fluid, self assured. The knife he\'s using is one he pulled from the crowded sink and wiped clean on his shirt. He hands one of the slices to you.
-            \"Did you notice- how the girl\'s nice looking and the guy is a total dump? It\'s always like that in those.\"<br>
-            You tear the bread in half and take a bite at the center. \"I didn\'t notice. I didn\'t see what the guy looked like.\"<br>
+            story:`Leaning against the counter, you watch him smear peanut butter onto two slices of white bread. His movements are fluid, self assured. The knife he\'s using is one he pulled from the crowded sink and wiped clean on his shirt.<br> He hands one of the slices to you.
+            <br><br>\"Did you notice- how the girl\'s nice looking and the guy is a total dump? It\'s always like that in those.\"<br>
+            You tear the bread in half and take a bite at the center. <br>\"I didn\'t notice. I didn\'t see what the guy looked like.\"<br>
             At that moment you hear the sound of tires on the gravel outside, and Travis shoots up straight. \"My dads home, we gotta go.\"<br>`,
             newText2: "He takes a hold of your shoulder and shepherds you out the back door, hurriedly. Only when you\'re out of sight of the house does he slow down.",
             destination: "outside",
@@ -152,12 +162,12 @@ Your palms are sweating as you work up the courage to speak. You\'ve been wantin
         choices: [
             {
             choice:"Ask a question",
-            newText:` \"What\'s your dad like?\"<br> \"He\'s a piece of shit. My mom is worse though.<br> \"What\'s your dad like?\"<br>\"Scary.\" `,
+            newText:` \"What\'s your dad like?\"<br><br> \"He\'s a piece of shit. My mom is worse though.<br> \"What\'s your dad like?\"<br><br>\"Scary.\" `,
             destination:"wannaSee"
             },
             {
             choice:"Try to leave",
-            newText:` \"I need to go home now.\"<br> \"Wait, I wanna show you something first.\"<br>He notices the apprehension on your face and adds, \"It\'ll just take a second.\"<br><br>
+            newText:` \"I need to go home now.\"<br><br> \"Wait, I wanna show you something first.\"<br>He notices the apprehension on your face and adds, \"It\'ll just take a second.\"<br><br>
             You walk down the road in silence for a while, and then he veers right towards the forest's edge. \"It's this way.\"`,
             destination:"turnOff"
             },
@@ -172,12 +182,12 @@ Your palms are sweating as you work up the courage to speak. You\'ve been wantin
         choices: [
             {
             choice:"Yes",
-            newText:` \"Okay.\"<br>\"Great.\"<br>You walk down the road in silence for a while, until he stops with his arm outstretched in front of you, pointing into the forest. \"This way.\"`,
+            newText:` \"Okay.\"<br><br>\"Great.\"<br>You walk down the road in silence for a while, until he stops with his arm outstretched in front of you, pointing into the forest. \"This way.\"`,
             destination:"turnOff"
             },
             {
             choice:"No",
-            newText:`\"No.\"<br>\"Oh.\"<br>His demeanor changes, he seems disappointed. \"Suit yourself, I guess.\"`,
+            newText:`\"No.\"<br><br>\"Oh.\"<br>His demeanor changes, he seems disappointed. \"Suit yourself, I guess.\"`,
             destination:"comeOn"
             },
             {
@@ -187,7 +197,7 @@ Your palms are sweating as you work up the courage to speak. You\'ve been wantin
             }, ]
         },
     comeOn: {
-        story:" You walk down the road in silence for a while, until he stops in place. \"I\'m turning off here,\" he points to the edge of the forest.<br> With a crooked smile he tacks on, \"Last chance.\"<br>",
+        story:" You walk down the road in silence for a while, until he stops in place. <br>\"I\'m turning off here,\" he points to the edge of the forest.<br> With a crooked smile he tacks on, \"Last chance.\"<br>",
         choices: [
             {
             choice:"Go with him",
@@ -196,15 +206,15 @@ Your palms are sweating as you work up the courage to speak. You\'ve been wantin
             },
             {
             choice:"Go home",
-            newText:`\"No.\"<br>\"Oh.\"<br>His demeanor changes, he seems disappointed. \"Suit yourself, I guess.\"`,
             destination:"badEnd"
             }, ]
     },
     badEnd: {
-        story:`You shake your head no and keep walking. Travis slips into the woods.	BORING ENDING`,
+        story:`You shake your head no and keep walking. Travis slips into the woods.`,
+        buttonTitle:"you got the boring ending:\("
     },
     turnOff: {
-        story: `You follow his movements as he steps through brush, over rocks embedded in the dirt and fallen trees. It\'s a path he\'s clearly familiar with. 
+        story: `You follow his movements as he steps through thick brush, over rocks embedded in the dirt and fallen trees. It\'s a path he\'s clearly familiar with. 
         Before anything else, you are hit by the smell. \"Here it is.\" `,
         buttonTitle: "Look at it",
         destination: "deadDeer"
@@ -232,7 +242,7 @@ Your palms are sweating as you work up the courage to speak. You\'ve been wantin
             },
             {
             choice:"Say nothing",
-            newText:`You are silent.<br>\"Suit yourself.\"<br>He stands there for a moment with his hands on his hips, admiring his handiwork. 
+            newText:`You are silent.<br><br>\"Suit yourself.\"<br>He stands there for a moment with his hands on his hips, admiring his handiwork. 
             \"Well, I just wanted someone else to see,\" he shrugs.<br>\"Before it\'s gone.\"`,
             destination:"leaving"
             }, ] 
@@ -244,8 +254,8 @@ Your palms are sweating as you work up the courage to speak. You\'ve been wantin
         destination: "leaving"
     },
     puke: {
-        story: `\"No.\"<br><br>You want to look away, but you can\'t stop staring at the wriggling tapestry of maggots spread over the deer.<br> A wave of panic suddenly washes over you, you double over and vomit. 
-        <br>\"Sorry...\"<br>
+        story: `\"No.\"<br><br>You want to look away, but you can\'t stop staring at the wriggling tapestry of maggots spread over the deer.<br> A wave of panic suddenly washes over you; you double over and vomit. 
+        <br><br>\"Sorry...\"<br><br>
         \"That\'s okay. It\'s normal.\"<br>You both stand in the silence.<br>
         \"Betchya they\'re gonna eat that-\" he gestures loosely to the small puddle by your feet- \"once they finish up over there.\"<br> 
         <br>\"Travis, I really need to go home now...\"
@@ -296,27 +306,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
 function renderScene() {
-    var text = "Next"
     
+    var text = "Next"
+     
         if (story[story.currentScene].buttonTitle) {            // if button has a special name
             text = story[story.currentScene].buttonTitle        // we give it here
-        }  
-        
-        content.innerHTML = `
-        <p>
-        ${story.bonusText}<br><br>
-        ${story[story.currentScene].story}</p>  
-        ${getInputs()}
-        <button id = "submit-button">${text}</button>
-        `
+        }
 
+        if (story[story.currentScene]) 
+        content.innerHTML = 
+        `
+            <p>
+            ${story.bonusText}<br><br>
+            ${story[story.currentScene].story}
+            </p>  
+            ${getInputs()}
+            <button id = "submit-button">${text}</button>
+        `
        var button = document.querySelector('#submit-button');
        button.addEventListener('click', function() {
         getInputValue()
        })
-
        story.bonusText = ""
-        if (story[story.currentScene].newText2) {                    // collect bonus text if no button
+        if (story[story.currentScene].newText2) {                                // collect bonus text if no button
             story.bonusText ="<br></br>"+story[story.currentScene].newText2
         }
 }
@@ -330,16 +342,16 @@ function getInputValue() {
         story.bonusText = "<br><br>"+(story[story.currentScene].choices[i].newText)
         }
         story.currentScene = inputs[i].getAttribute('data-destination')
-        
+
       renderScene();
       return;
        }
    }
-   story.currentScene = story[story.currentScene].destination // for if there are no options
+   story.currentScene = story[story.currentScene].destination   // for if there are no options
   renderScene()
 }
 
-function getInputs() { // creates radio buttons
+function getInputs() {                                          // creates radio buttons
     var input = ""
     if (!story[story.currentScene].choices) {
       return ""
